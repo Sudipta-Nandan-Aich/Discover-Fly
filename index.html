@@ -59,7 +59,6 @@
 	                    <label for="">First Class ($150)</label>
 					</div>
 					<!-- Add increase & decrease button for first class  -->
-
 	                <div class="f-class">
 	                    <button id="first-class-decrease" class="btn btn-primary"><i class="fas fa-minus"></i></button>
 	                    <input id="first-class-count" class="inp-style inp-width" type="number" min="0" name="" value="0">
@@ -73,7 +72,6 @@
 	                    <label for="">Economy ($100)</label>
 					</div>
 					<!-- Add increase & decrease button for economy class  -->
-
 	                <div class="f-class">
 	                    <button id="economy-decrease" class="btn btn-primary"><i class="fas fa-minus"></i></button>
 	                    <input id="economy-count" class="inp-style inp-width" type="number" min="0" name="" value="0">
@@ -120,14 +118,9 @@
 			
 	    </main>
 	    
-	    
-		
-	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-	        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-	        crossorigin="anonymous"></script>
 	    <script>
 
-	        // Ticket amount conditions
+			// Ticket amount conditions
 	        function handleTicketChange(ticket, isIncrease) {
 	            const ticketInput = document.getElementById(ticket + '-count');
 	            const ticketCount = parseInt(ticketInput.value);
@@ -162,7 +155,6 @@
 	            document.getElementById('total-price').innerText = totalPrice;
 	        }
 	
-
 	        // input values
 	        function getInputValues(ticket) {
 	            const ticketInput = document.getElementById(ticket + '-count');
@@ -214,7 +206,6 @@
 
 	    </script>
 	</body>
-	
 
 	</html>
 
