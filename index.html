@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+	<!DOCTYPE html>
 	<html lang="en">
 	<head>
 	    <meta charset="UTF-8">
@@ -23,7 +23,7 @@
 	    <header class="container">
 	        <nav>
 	            <ul>
-	                <li><a href="index.html">Home</a></li>
+	                <li><a href="#">Home</a></li>
 	                <li><a href="#">About Us</a></li>
 	                <li><a href="#">Contact</a></li>
 	                <li><a class="active" href="#">Sign Up</a></li>
@@ -57,7 +57,9 @@
 	            <div>
 	                <div>
 	                    <label for="">First Class ($150)</label>
-	                </div>
+					</div>
+					<!-- Add increase & decrease button for first class  -->
+
 	                <div class="f-class">
 	                    <button id="first-class-decrease" class="btn btn-primary"><i class="fas fa-minus"></i></button>
 	                    <input id="first-class-count" class="inp-style inp-width" type="number" min="0" name="" value="0">
@@ -69,7 +71,9 @@
 	            <div>
 	                <div>
 	                    <label for="">Economy ($100)</label>
-	                </div>
+					</div>
+					<!-- Add increase & decrease button for economy class  -->
+
 	                <div class="f-class">
 	                    <button id="economy-decrease" class="btn btn-primary"><i class="fas fa-minus"></i></button>
 	                    <input id="economy-count" class="inp-style inp-width" type="number" min="0" name="" value="0">
@@ -84,9 +88,8 @@
 	                    <div class="right">
 	                        <p>$<span id="sub-total">0</span></p>
 	                    </div>
-	                </div>
-	
-
+					</div>
+					
 	                <div class="amount">
 	                    <div class="left">
 	                        <p>Charge 10% VAT</p>
@@ -114,79 +117,17 @@
 	                veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise
 	                voluptatibus quam</p>
 	        </div>
-	        <!-- Modal -->
-	        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	            <div class="modal-dialog">
-	                <div class="modal-content">
-	                    <div class="modal-header">
-	                        <h5 class="modal-title" id="exampleModalLabel">Confirm your purchase?</h5>
-	                    </div>
-	                    <div class="modal-body">
-	                        <div class="calculations">
-	                            <div class="amount">
-	                                <div class="left">
-	                                    <p>First Class($150) x <span id="modal-first-class-count"></span> </p>
-	                                </div>
-	                                <div class="right">
-	                                    <p>$<span id="first-class-total-price">0</span></p>
-	                                </div>
-	                            </div>
-	                            <div class="amount">
-	                                <div class="left">
-	                                    <p>Economy($100) x <span id="modal-economy-count"></span></p>
-	                                </div>
-	                                <div class="right">
-	                                    <p>$<span id="economy-total-price">0</span></p>
-	                                </div>
-	                            </div>
-	
-
-	                            <div class="amount">
-	                                <div class="left">
-	                                    <p>Subtotal</p>
-	                                </div>
-	                                <div class="right">
-	                                    <p>$<span id="modal-sub-total">0</span></p>
-	                                </div>
-	                            </div>
-	                            <div class="amount">
-	                                <div class="left">
-	                                    <p>Charge 10% VAT</p>
-	                                </div>
-	                                <div class="right">
-	                                    <p>$<span id="modal-vat">0</span></p>
-	                                </div>
-	                            </div>
-	                            <hr>
-	                            <div class="amount">
-	                                <div class="left">
-	                                    <h4>Total</h4>
-	                                </div>
-	                                <div class="right">
-	                                    <p>$<span id="modal-total-price">0</span></p>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <div class="modal-footer">
-	                        <button id="decline-button" type="button" class="btn btn-secondary"
-	                            data-bs-dismiss="modal">Decline</button>
-	                        <button id="accept-button" type="button" class="btn btn-primary"
-	                            data-bs-dismiss="modal">Accept</button>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
+			
 	    </main>
-	    <!--Success section-->
-	    <section id="success-message">
-	        <h1>Thank you for purchasing the tickets.May you have a great journey.</h1>
-	    </section>
+	    
+	    
+		
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
 	        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
 	        crossorigin="anonymous"></script>
 	    <script>
-	        // function to handle Ticket Change
+
+	        // Ticket amount conditions
 	        function handleTicketChange(ticket, isIncrease) {
 	            const ticketInput = document.getElementById(ticket + '-count');
 	            const ticketCount = parseInt(ticketInput.value);
@@ -209,7 +150,7 @@
 	        }
 	
 
-	        // function to calculate sub-total, vat, total price
+	        // calculate sub-total, 10% vat, total
 	        function calculateTotal() {
 	            const firstClassCount = getInputValues('first-class')
 	            const economyCount = getInputValues('economy');
@@ -222,7 +163,7 @@
 	        }
 	
 
-	        // function to get input values
+	        // input values
 	        function getInputValues(ticket) {
 	            const ticketInput = document.getElementById(ticket + '-count');
 	            const ticketCount = parseInt(ticketInput.value);
@@ -230,23 +171,9 @@
 	        }
 	
 
-	        // function to update span text
+	        // update span text
 	        function updateSpanText(id, inputValue) {
 	            document.getElementById(id).innerText = inputValue;
-	        }
-	
-
-	        // function to reset input values
-	        function resetInputValues() {
-	            updateSpanText('modal-first-class-count', 0);
-	            updateSpanText('modal-economy-count', 0);
-	            updateSpanText('first-class-total-price', 0);
-	            updateSpanText('economy-total-price', 0);
-	            updateSpanText('modal-sub-total', 0);
-	            updateSpanText('modal-vat', 0);
-	            updateSpanText('modal-total-price', 0);
-	            document.getElementById('first-class-count').value = 0;
-	            document.getElementById('economy-count').value = 0;
 	        }
 	
 
@@ -283,29 +210,10 @@
 	                    const subTotal = firstClassPrice + economyPrice;
 	                    const vat = Math.round(subTotal * 0.1);
 	                    const totalPrice = subTotal + vat;
-	                    calculateTotal();
-	                    updateSpanText('modal-first-class-count', firstClassCount);
-	                    updateSpanText('modal-economy-count', economyCount);
-	                    updateSpanText('first-class-total-price', firstClassPrice);
-	                    updateSpanText('economy-total-price', economyPrice);
-	                    updateSpanText('modal-sub-total', subTotal);
-	                    updateSpanText('modal-vat', vat);
-	                    updateSpanText('modal-total-price', totalPrice);
-	                    document.getElementById('exampleModal').style.display = 'block';
-	                    document.getElementById('exampleModal').style.opacity = 1;
+	                    
 	                }
 	            }
-	        });
-	        document.getElementById('accept-button').addEventListener('click', function () {
-	            document.getElementById('booking-form').style.display = 'none';
-	            document.getElementById('success-message').style.display = 'block';
-	            document.getElementById('exampleModal').style.display = 'none';
-	            resetInputValues();
-	            calculateTotal();
-	        });
-	        document.getElementById('decline-button').addEventListener('click', function () {
-	            document.getElementById('exampleModal').style.display = 'none';
-	        })
+	        }); 
 
 	    </script>
 	</body>
