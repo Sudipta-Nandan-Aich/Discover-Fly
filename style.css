@@ -14,6 +14,7 @@ body{
     background-size: cover;
 }
 
+
 nav{
     height: 50px;
     width: 100%;
@@ -33,10 +34,26 @@ nav ul li a{
     color: #fff;
     padding: 10px;
     text-transform: uppercase;
+    text-decoration: none;
 }
 nav ul li a:hover, a.active{
     background-color: #3352F2;
     border-radius: 5px;
+    color: white;
+}
+#success-message{
+    background-color:rgba(0, 0,0,.5);
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 150px;
+    max-width: 800px;
+    display: none;
+    color: white;
+}
+#success-message h1{
+    font-size:20px;
 }
 .main-content{
     display: grid;
@@ -63,7 +80,7 @@ nav ul li a:hover, a.active{
     align-items: center;
 }
 .inp-width{
-    min-width: 300px;
+    min-width: 80px;
 }
 .plus-minus-btn{
     color: #3352F2;
@@ -98,6 +115,7 @@ nav ul li a:hover, a.active{
     color: #fff;
     width: 80%;
 }
+
 .booking-content h1{
     font-size: 70px;
     text-transform: uppercase;
@@ -105,6 +123,7 @@ nav ul li a:hover, a.active{
     font-weight: 400;
     margin-bottom: 25px;
 }
+
 
 .btn-style{
     display: block;
@@ -120,3 +139,4 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
 }
+
