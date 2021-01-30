@@ -170,14 +170,10 @@
 	            return ticketCount;
 	        }
 	
-
-	        // update span text
 	        function updateSpanText(id, inputValue) {
 	            document.getElementById(id).innerText = inputValue;
 	        }
 	
-
-	        // added event handler to buttons
 	        document.getElementById('first-class-increase').addEventListener('click', function () {
 	            handleTicketChange('first-class', true);
 	        });
@@ -209,7 +205,8 @@
 	                    const economyPrice = economyCount * 100;
 	                    const subTotal = firstClassPrice + economyPrice;
 	                    const vat = Math.round(subTotal * 0.1);
-	                    const totalPrice = subTotal + vat;
+						const totalPrice = subTotal + vat;
+						alert("Yor booking has been confirmed");
 	                    
 	                }
 	            }
